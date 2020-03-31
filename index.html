@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Trade Coffee</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Fair Trade Coffee</h1>
+        <hr>
+        <p style="text-align: center;">Prove the authenticity of coffee using the Ethereum blockchain.</p>
+    </div>
+
+    <div id="ftc-harvest">
+
+        <div class="row">
+            <div class="column">
+
+                <h2>Add New User</h2>
+                <div class="form-group">
+                    Account Address
+                    <br>
+                    <input type="text" id="account" name="account" placeholder="Eg. 0x27d8d15cbc94527cadf5ec14b69519ae23288b95"><br>
+                    <div class=button-div>
+                        <button class="btn-fetchOne" id="btnFarmer" type="button" data-id="11" data-toggle="tooltip" title="Add New Farmer">Farmer</button>
+                        <button class="btn-fetchTwo" id="btnDistributor" type="button" data-id="12" data-toggle="tooltip" title="Add New Distributor">Distributor</button>
+                        <button class="btn-fetchOne" id="btnRetailer" type="button" data-id="13" data-toggle="tooltip" title="Add New Retailer">Retailer</button>
+                        <button class="btn-fetchTwo" id="btnConsumer" type="button" data-id="14" data-toggle="tooltip" title="Add New Consumer">Consumer</button>
+                    </div>
+                </div>
+                <div class=form-break></div>
+
+            </div>
+            <div class="column">
+
+                <h2>Product Overview</h2>
+                <div class="form-group">
+                    UPC
+                    <br>
+                    <input type="number" id="upc" name="upc" placeholder="Eg. 1"><br>
+                    <div class=button-div>
+                        <button class="btn-fetchOne" id="btnFetch1" type="button" data-id="9">Fetch Data 1</button>
+                        <button class="btn-fetchTwo" id="btnFetch2" type="button" data-id="10">Fetch Data 2</button>
+                    </div>
+                </div>
+                <div class=form-break></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+
+                <h2>Farm Details</h2>
+                <div class="form-group">
+                    Farmer ID
+                    <br>
+                    <input type="text" id="originFarmerID" name="originFarmerID"  placeholder="Eg. 0x27d8d15cbc94527cadf5ec14b69519ae23288b95"
+                           size="50"><br>
+                    Farm Name
+                    <br>
+                    <input type="text" id="originFarmName" name="originFarmName" placeholder="Eg. John Doe"><br>
+                    Farm Information
+                    <br>
+                    <input type="text" id="originFarmInformation" name="originFarmInformation" placeholder="Eg. Yarra Valley"><br>
+                    Farm Latitude
+                    <br>
+                    <input type="text" id="originFarmLatitude" name="originFarmLatitude" placeholder="Eg. -38.239770"><br>
+                    Farm Longitude
+                    <br>
+                    <input type="text" id="originFarmLongitude" name="originFarmLongitude" placeholder="Eg. 144.341490"><br>
+                    <br>
+                    <button class="btn-harvest" id="btnHarvest" type="button" data-id="1" data-toggle="tooltip" title="Harvest Coffee - Only Farmer. Insert UPC and all farm's details">Harvest</button>
+                    <button class="btn-process" id="btnProcess" type="button" data-id="2" data-toggle="tooltip" title="Process Coffee - Only Farmer. Insert UPC">Process</button>
+                    <button class="btn-pack" id="btnPack" type="button" data-id="3" data-toggle="tooltip" title="Pack Coffee - Only Farmer. Insert UPC">Pack</button>
+                    <button class="btn-forsale" id="btnForSale" type="button" data-id="4" data-toggle="tooltip" title="Sell Coffee - Only Farmer. Insert UPC and Product Price">ForSale</button>
+                </div>
+                <div class=form-break></div>
+
+            </div>
+            <div class="column">
+
+                <h2>Product Details</h2>
+                <div class="form-group">
+                    Product Notes
+                    <br>
+                    <input type="text" id="productNotes" name="productNotes" placeholder="Eg. Best beans for Espresso" size="60"><br>
+                    Product Price
+                    <br>
+                    <input type="number" id="productPrice" name="productPrice" placeholder="Eg. 1">ETH<br>
+
+                    <button class="btn-buy" id="btnBuy" type="button" data-id="5" data-toggle="tooltip" title="Buy Coffee from Farmer - Only Distributor. Insert UPC and balance in Product Price">Buy</button>
+                    <button class="btn-ship" id="btnShip" type="button" data-id="6" data-toggle="tooltip" title="Ship Coffee to Retailer - Only Distributor. Insert UPC">Ship</button>
+                    <button class="btn-receive" id="btnReceive" type="button" data-id="7" data-toggle="tooltip" title="mark Coffee as received - Only Retailer. Insert UPC">Receive</button>
+                    <button class="btn-purchase" id="btnTag" type="button" data-id="15" data-toggle="tooltip" title="Change the Coffee's price - Only Retailer. Insert UPC and Product Price">Tag Price</button>
+                    <button class="btn-purchase" id="btnPurchase" type="button" data-id="8" data-toggle="tooltip" title="Buy Coffee from Retailer - Only Customer. Insert UPC and balance in Product Price">Purchase</button>
+                </div>
+                <div class=form-break></div>
+
+            </div>
+        </div>
+
+        <hr>
+    </div>
+
+    <h2>Transaction History<span id="ftc-history"></span></h2>
+    <div>
+        <ul id="ftc-events">
+            <!-- Events will appear here from app.js -->
+        </ul>
+        <br>
+
+    </div>
+
+    <h2>LOG<span id="ftc-info"></span></h2>
+    <div>
+        <ul id="ftc-item">
+            <!-- Events will appear here from app.js -->
+        </ul>
+        <br>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="js/web3.min.js"></script> -->
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
