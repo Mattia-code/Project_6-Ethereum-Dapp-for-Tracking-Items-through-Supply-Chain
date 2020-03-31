@@ -18,12 +18,12 @@ Below there are the UML diagrams related to the processes covered by the followi
 
 ![Data Modeling Diagram](UML%20-%20Data%20Modeling.png)
 
-###Info for submit
+### Info for submit
 
 * TX: 0x17fe68fc7cded20fc716ecbc41ab2c09eb12af01daca92141c33ef6b9e9c0f83
 * Contract Address: 0xe9456C9a2d9061cA4c55ca6b3Ef98c3Ef6c1c69d 
 * Program version: 1.0.0
-* Node version: v12.16.1
+* Node version: v10.18.0
 * Truffle version: v4.1.14
 * web3 version: v1.2.1
 
@@ -80,7 +80,7 @@ Actual version: 1.0.0
 * Ganache-cli
 * Truffle
 
-###Note
+### Note
 
 ```
 truffle migrate --reset --network rinkeby
