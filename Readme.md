@@ -7,7 +7,7 @@ The case taken in consideration is related to the harvesting, processing and sel
 
 Following the example of the Starter Code provided by Udacity at the following [link](https://github.com/udacity/nd1309-Project-6b-Example-Template).
 
-###Project UML
+### Project UML
 Below there are the UML diagrams related to the processes covered by the following DApp:
 
 ![Activity Diagram](UML%20-%20Activity%20Diagram.png)
